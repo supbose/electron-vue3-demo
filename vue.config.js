@@ -29,7 +29,13 @@ module.exports = {
               LSUIElement: 1
             }
           },
+          appx: {
+            publisher: "CN=Level 7 Systems Ltd.",
+            publisherDisplayName:"苹果资源库",
+            backgroundColor:'#464646'
+          },
           win: {
+            // Logo:'build/icons/32x32.png',
             icon: 'build/icons/icon.ico',
             target: ['nsis','appx']
           },
