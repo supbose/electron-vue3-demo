@@ -31,7 +31,7 @@ module.exports = {
           },
           win: {
             icon: 'build/icons/icon.ico',
-            target: 'nsis'
+            target: ['nsis','appx']
           },
           linux: {
             icon: 'build/icons/'
