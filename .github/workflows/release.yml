@@ -26,7 +26,7 @@ jobs:
           yarn release
         shell: pwsh
         env:
-          GITHUB_TOKEN: ${{ secrets.MACCMSPLAYER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.VUE3_ELECTRON }}
       - name: upload file
         uses: actions/upload-artifact@v2
         with:
@@ -44,4 +44,4 @@ jobs:
             dist_electron/latest-mac.yml
             dist_electron/latest.yml
         env:
-          GITHUB_TOKEN: ${{ secrets.MACCMSPLAYER_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.VUE3_ELECTRON }}
