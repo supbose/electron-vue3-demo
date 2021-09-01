@@ -7,8 +7,8 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 
 
 
-app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors') // 允许跨域
-app.commandLine.appendSwitch('--ignore-certificate-errors', 'true') // 忽略证书相关错误
+// app.commandLine.appendSwitch('disable-features', 'OutOfBlinkCors') // 允许跨域
+// app.commandLine.appendSwitch('--ignore-certificate-errors', 'true') // 忽略证书相关错误
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([

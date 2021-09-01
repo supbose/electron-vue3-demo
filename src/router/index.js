@@ -4,7 +4,7 @@ import routes from './config'
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes,router
+  routes
 });
 router.beforeEach((to, from, next) => {
   if (to.path === '/login') {

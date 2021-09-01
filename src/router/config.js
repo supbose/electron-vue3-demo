@@ -15,14 +15,14 @@ function _forEach(data) {
 const routes = [
     {
         path: "/login",
-        name:'login',
+        // name:'login',
         component: () => import("@/views/Login"),
     },
-    {
-      path: '/',
-      component: () => import('@/views/Layout'),
-      // redirect: '/dashboard',
-    },
+    // {
+    //   path: '/',
+    //   component: () => import('@/views/Layout'),
+    //   // redirect: '/dashboard',
+    // },
     {
         path: '/layout',
         name:'layout',
