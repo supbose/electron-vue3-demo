@@ -18,14 +18,14 @@ const routes = [
         // name:'login',
         component: () => import("@/views/Login"),
     },
-    // {
-    //   path: '/',
-    //   component: () => import('@/views/Layout'),
-    //   // redirect: '/dashboard',
-    // },
+    {
+      path: '/',
+      component: () => import('@/views/Layout'),
+      redirect: '/layout',
+    },
     {
         path: '/layout',
-        name:'layout',
+        // name:'layout',
         component: () => import('@/views/Layout'),
         children: [
             {
@@ -36,13 +36,13 @@ const routes = [
         ]
     },
     {
-        // path: '/:catchAll(.*)',
-        // component: () => import('@/views/Found')
-        path: '/:pathMatch(.*)*',
-    component: () => import('@/views/Found'),
-    meta: {
-        title: '找不到页面'
-    }
+        path: '/:catchAll(.*)',
+        component: () => import('@/views/Found')
+    //     path: '/:pathMatch(.*)*',
+    // component: () => import('@/views/Found'),
+    // meta: {
+    //     title: '找不到页面'
+    // }
     }
 ]
 
