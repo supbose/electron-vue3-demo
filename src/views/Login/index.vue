@@ -1,49 +1,42 @@
 <template>
-  <div class="login-container">
-    <div class="login-wrapper">
-      <div class="login">
-        <div class="title">用户登录</div>
-        <div class="_inp-wrap">
-          <input type="text" v-model="userName" class="_inp ontline border4px" placeholder="随便输入用户名" />
-        </div>
-        <div class="_inp-wrap">
-          <input type="text" v-model="pwd" class="_inp ontline border4px" placeholder="随便输入密码" />
-        </div>
-        <div class="_inp-wrap">
-          <button class="base-btn ontline border4px w100" @click="handleSubmit">登录</button>
-        </div>
-        <div class="_inp-wrap">
-          <button class="base-btn ghost ontline border4px w100" @click="handleReset">重置</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div />
+
+
 </template>
 <script>
-import { ref,reactive } from "vue";
-import { useStore } from 'vuex'
-import { isTrimAction } from "@/utils/verification";
+import { ref, reactive, onMounted } from "vue";
+import { useStore } from "vuex";
+import { isTrimAction } from "../../utils/verification";
 // import router from '@/router/index.js'
-import { useRouter } from 'vue-router'
+import { useRouter } from "vue-router";
 export default {
   setup() {
-    const userName = ref("");
-    const pwd = ref("");
+    const userName = ref("1");
+    const pwd = ref("1");
     const state = reactive({
-    store:useStore()
-    })
+      store: useStore(),
+    });
     const router = useRouter();
+
+    onMounted(() => {
+      handleSubmit();
+    });
+
     function handleSubmit() {
       if (isTrimAction(userName.value) && isTrimAction(pwd.value)) {
-        let user = {userName:userName.value,pwd:pwd.value,time:new Date()}
-        localStorage.setItem('user',JSON.stringify(user))
-        state.store.commit('userFun',user)
-          router.push({
-              path:'/layout'
-          })
+        let user = {
+          userName: userName.value,
+          pwd: pwd.value,
+          time: new Date(),
+        };
+        localStorage.setItem("user", JSON.stringify(user));
+        state.store.commit("userFun", user);
+        router.push({
+          path: "/layout",
+        });
         return;
       } else {
-          alert('请输账号密码')
+        alert("请输账号密码");
       }
     }
     function handleReset() {
@@ -53,9 +46,9 @@ export default {
       userName,
       pwd,
       handleSubmit,
-      handleReset
+      handleReset,
     };
-  }
+  },
 };
 </script>
 <style lang="scss" scoped>

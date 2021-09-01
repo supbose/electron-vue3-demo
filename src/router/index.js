@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import routes from './config'
 
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes,
+  history: createWebHashHistory(),
+  routes,router
 });
 router.beforeEach((to, from, next) => {
   if (to.path === '/login') {
@@ -17,5 +17,7 @@ router.beforeEach((to, from, next) => {
     return
   }
   next('/login')
+
+
 })
 export default router;

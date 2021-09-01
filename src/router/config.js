@@ -15,12 +15,18 @@ function _forEach(data) {
 const routes = [
     {
         path: "/login",
-        component: () => import("../views/Login"),
+        name:'login',
+        component: () => import("@/views/Login"),
+    },
+    {
+      path: '/',
+      component: () => import('@/views/Layout'),
+      // redirect: '/dashboard',
     },
     {
         path: '/layout',
         name:'layout',
-        component: () => import('../views/Layout'),
+        component: () => import('@/views/Layout'),
         children: [
             {
                 path: '',
@@ -30,8 +36,13 @@ const routes = [
         ]
     },
     {
-        path: '/:catchAll(.*)',
-        component: () => import('../views/Found')
+        // path: '/:catchAll(.*)',
+        // component: () => import('@/views/Found')
+        path: '/:pathMatch(.*)*',
+    component: () => import('@/views/Found'),
+    meta: {
+        title: '找不到页面'
+    }
     }
 ]
 
