@@ -33,9 +33,9 @@ module.exports = {
             icon: 'build/icons/icon.ico',
             target: 'nsis'
           },
-          linux: {
-            icon: 'build/icons/'
-          },
+          // linux: {
+          //   icon: 'build/icons/'
+          // },
           snap: {
             publish: ['github']
           }
